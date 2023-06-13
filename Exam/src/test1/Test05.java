@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  * 날짜 : 2023/06/13
  * 이름 : 한상민
- * 내용 : 자바 자료형 연습문제
+ * 내용 : 자바 조건문 연습문제
  */
 public class Test05 {
 	public static void main(String[] args) {

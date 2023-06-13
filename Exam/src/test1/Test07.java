@@ -3,7 +3,7 @@ package test1;
 /*
  * 날짜 : 2023/06/13
  * 이름 : 한상민
- * 내용 : 자바 자료형 연습문제
+ * 내용 : 1 ~ 10까지 정수 중 2의 배수와 3의 배수 정수의 합 구하기
  */
 public class Test07 {
 	public static void main(String[] args) {
