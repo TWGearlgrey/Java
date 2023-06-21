@@ -1,6 +1,6 @@
-package sub5;
+package sub6;
 
-public class Sedan extends Car{
+public class Sedan extends Car {
 	
 	private int cc;
 	
@@ -9,13 +9,17 @@ public class Sedan extends Car{
 		this.cc = cc;
 	}
 	
+	@Override
+	public void speedUp(int speed) {
+		this.speed += speed + 20;
+	}
+	
 	public void speedTurbo() {
-		// private에서 protected로 접근권한 변경해서 자식클래스 참조
 		this.speed += 20;
 	}
 	
 	public void show() {
 		super.show();
-		System.out.println("배기량 : "+ this.cc);
+		System.out.println("배기량 : " + this.cc);
 	}
 }
