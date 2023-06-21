@@ -25,7 +25,7 @@ class Adder {
 	
 	public void add(int x, int y) {
 		this.x += x;
-		y++; // 지역변수 y의 값만 증가하고 출력은 그대로.
+		y++; // 지역변수 y의 값만 증가하고 출력은 그대로. 색깔이 유의
 	}
 	
 	public void add(int[] arr) {

@@ -10,7 +10,7 @@ public class Calc { //class를 사용하려면 new를 해야 함.
 
 	// 싱글톤 객체 - 생성자
 	private Calc() {
-		
+		// 초기화 코드
 	}
 	
 	

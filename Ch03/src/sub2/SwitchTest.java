@@ -25,7 +25,6 @@ public class SwitchTest {
 		case 1:
 			System.out.println("number는 홀수");
 			break;
-		
 		}
 		
 	}
