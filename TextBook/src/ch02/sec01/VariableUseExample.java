@@ -3,7 +3,7 @@ package ch02.sec01;
 /*
  * 날짜 : 2023/06/12
  * 이름 : 한상민
- * 내용 : 교재 p37 예제
+ * 내용 : 교재 p37_2 예제
  */
 public class VariableUseExample {
 	public static void main(String[] args) {
