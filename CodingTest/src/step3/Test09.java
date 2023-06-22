@@ -3,7 +3,7 @@ package step3;
 import java.util.Scanner;
 
 /*
- * 날짜 : 2023/06/21
+ * 날짜 : 2023/06/22
  * 이름 : 한상민
  * 내용 : 2438번. 별 찍기 - 1
  */
