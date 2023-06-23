@@ -19,22 +19,22 @@ public class Test03 {
 			arr[i] = A;
 		}
 
-		int min = 0;
-		for( int i=0 ; i<N ; i++ ) {
-			min = arr[i];
+		int min = arr[0];
+		int max = arr[0];
+		
+		for( int i=1 ; i<N ; i++ ) {
 			if(min > arr[i]) {
 				min = arr[i];
 			}
-		}
-		System.out.print(min+" ");
+		}	
 		
-		
-		int max = 0;
-		for( int i=0 ; i<N ; i++ ) {
+		for( int i=1 ; i<N ; i++ ) {
 			if(max < arr[i]) {
 				max = arr[i];
 			}
 		}
-		System.out.print(max);
+		System.out.print(min + " " + max);
+		
+		in.close();
 	}
 }

@@ -20,5 +20,6 @@ public class Test02 {
 				System.out.print(A+" ");
 			}
 		}
+		in.close();
 	}
 }
