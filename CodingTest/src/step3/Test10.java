@@ -22,5 +22,6 @@ public class Test10 {
 				}
 			System.out.println();
 		}
+		in.close();
 	}
 }

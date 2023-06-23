@@ -19,5 +19,6 @@ public class Test11 {
 			}
 			System.out.println(A+B);
 		}
+		in.close();
 	}
 }

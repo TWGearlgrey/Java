@@ -19,5 +19,6 @@ public class Test09 {
 			}
 			System.out.println();
 		}
+		in.close();
 	}
 }
