@@ -3,7 +3,7 @@ package step4;
 import java.util.Scanner;
 
 /*
- * 날짜 : 2023/06/22
+ * 날짜 : 2023/06/22~26
  * 이름 : 한상민
  * 내용 : 3052. 나머지
  */
@@ -25,13 +25,32 @@ public class Test08 {
 			temp[i] = temp1;
 		}
 		
-		//3. 같은 값이 몇개 있는지 찾기
+		//3. 같은 값이 몇개 있는지 찾기 - 내림차순 정렬하고 break로 찾기?
+		//3-1. 내림차순 정렬
+		for ( int i=0 ; i<9 ; i++ ) {
+			for ( int j=i+1 ; j<10 ; j++ ) {
+				if( temp[i] > temp[j] ) {
+					int temp1 = temp[i];
+					temp[i] = temp[j];
+					temp[j] = temp1;
+				}
+			}
+		}
+		
+		//3-2. 나머지의 종류가 몇개인지
+		int count = 0;
+		for( int i=0, j=i+1 ; i<9 && j<10 ; j++ ) {
+			if ( temp[i] != temp[j] ) {
+				count++;
+				i = j;
+			} else if ( temp[i] == temp[j] ) {
+				i = j;
+			}
+		}
+		count++;
 		
 		
-		
-		//4. 같은 값 개수만큼 전체에서 빼주기
-		
-		
+		System.out.println(count);
 		
 		in.close();
 	}
