@@ -42,5 +42,7 @@ public class Test06 {
 		for ( int i=0 ; i<26 ; i++ ) {
 			System.out.print(val[i]+" ");
 		}
+		
+		in.close();
 	}
 }

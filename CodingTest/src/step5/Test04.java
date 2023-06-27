@@ -16,5 +16,7 @@ public class Test04 {
 		int b = a.charAt(0); // charAt은 char로 반환되므로 이를 이용
 		
 		System.out.println(b);
+		
+		in.close();
 	}
 }

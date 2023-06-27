@@ -22,5 +22,7 @@ public class Test05 {
 			sum += a;
 		}
 		System.out.println(sum);
+		
+		in.close();
 	}
 }

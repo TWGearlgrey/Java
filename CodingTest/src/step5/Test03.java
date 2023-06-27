@@ -20,5 +20,6 @@ public class Test03 {
 			System.out.print(word.charAt(0)); // 첫번째 글자 출력
 			System.out.println(word.charAt(lg-1)); // 마지막 글자 출력
 		}
+		in.close();
 	}
 }
