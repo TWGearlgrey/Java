@@ -1,4 +1,4 @@
-package ch02.sec01;
+package ch02.sec02;
 
 /*
  * 날짜 : 2023/06/21
