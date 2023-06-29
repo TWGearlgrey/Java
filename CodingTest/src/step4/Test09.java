@@ -32,6 +32,6 @@ public class Test09 {
 		for ( int i=0 ; i<N ; i++ ) {
 			System.out.print(basket[i] + " ");
 		}
-		
+		in.close();
 	}
 }

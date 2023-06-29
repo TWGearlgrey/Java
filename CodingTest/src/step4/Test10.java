@@ -42,5 +42,7 @@ public class Test10 {
 			sum += exam[i];
 		}
 		System.out.println(sum/N);
+		
+		in.close();
 	}
 }
