@@ -9,15 +9,24 @@ import java.util.Scanner;
  */
 public class Test02 {
 	public static void main(String[] args) {
+
+		// 값 입력
 		Scanner in = new Scanner(System.in);
-		
 		String ch = in.nextLine();
 		
-		for ( int i=0 ; i<11 ; i++ ) {
-			System.out.print(ch.charAt(i));
+		// 입력값에 대한 배열 생성
+		String[] chArr = ch.split(" ");
+
+		// 체스 1세트
+		int[] set = {1, 1, 2, 2, 2, 8};
+		
+		// 피스 추가 및 제거
+		int[] temp = new int[6];
+		for (int i=0 ; i<6 ; i++) {
+			temp[i] = set[i] - Integer.parseInt(chArr[i]);
+			System.out.print(temp[i]+" ");
 		}
 		
-		// (증감값) = (입력값)-1 ~~> 킹1개 = (입력값) - (증감값)
-		
+		in.close();
 	}
 }
