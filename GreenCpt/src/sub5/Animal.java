@@ -4,14 +4,20 @@ public class Animal {
 	private int age;
 	private String name,sex;
 	
-	public void setAge(int age) {
+	public Animal(int age, String name, String sex) {
 		this.age = age;
-	}
-	public void setName(String name) {
 		this.name = name;
-	}
-	public void setSex(String sex) {
 		this.sex = sex;
+	}
+	
+	public void setAge(int n) {
+		age = n;
+	}
+	public void setName(String n) {
+		name = n;
+	}
+	public void setSex(String n) {
+		sex = n;
 	}
 	
 	public int getAge() {
