@@ -37,5 +37,7 @@ public class Test03 {
 				System.out.println();
 			}
 		}
+		
+		sc.close();
 	}
 }

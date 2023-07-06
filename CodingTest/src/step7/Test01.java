@@ -3,7 +3,7 @@ package step7;
 import java.util.Scanner;
 
 /*
- * 날짜 : 2023/00/00
+ * 날짜 : 2023/07/05
  * 이름 : 한상민
  * 내용 : 2738. 행렬 덧셈
  */
