@@ -22,13 +22,15 @@ public class Test01 {
 		
 		// b진법 더하기
 		for(int i=0 ; i<len ; i++) {
-			// 1~9 경우
-			if((int) n.charAt(i) < 10) {
-				sum += Math.pow(b, len-i-1) * (int) n.charAt(i);
+			int part = (int) n.charAt(i);
 			
-			// A~Z (10~35즉, 65~90의 경우
-			} else if((int) n.charAt(i) >= 65) {
-				sum += Math.pow(b, len-i-1) * ((int) n.charAt(i) - 55);
+			// 1~9 경우
+			if(part < 65) {
+				sum += Math.pow(b, len-i-1) * (part - 48); //1의 아스키코드가 49
+			
+			// A~Z 경우
+			} else {
+				sum += Math.pow(b, len-i-1) * (part - 55); //A의 아스키코드가 65
 			}
 		}
 		
