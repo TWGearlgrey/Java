@@ -5,7 +5,7 @@ package step09;
  * 이름 : 한상민
  * 내용 : 5086. 배수와 약수
  */
-public class Test08 {
+public class Test01 {
 	public static void main(String[] args) {
 		
 	}

@@ -1,4 +1,4 @@
-package step1;
+package step01;
 
 public class Test12 {
 	public static void main(String[] args) {
