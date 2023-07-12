@@ -23,7 +23,7 @@ public class Test05 {
 		}
 		
 		for(int i=m ; i<n ; i++) {
-			
+			int cnt = 0;
 			for(int j=1 ; j<i ; j++) {
 				if(m%j == 0) {
 					
