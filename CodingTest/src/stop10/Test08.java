@@ -16,42 +16,44 @@ public class Test08 {
 		int b = sc.nextInt();
 		int c = sc.nextInt();
 		
+		// 1. 크기 순 정렬
 		int[] arr = {a, b, c};
 		
-		for(int i=1 ; i<3 ; i++) {
-			if(a < arr[i]) {
-				int temp = a; 
-				a = arr[i];
-				arr[i] = temp;
+		for(int i=0 ; i<arr.length-1 ; i++) {
+			for(int j=i+1 ; j<arr.length ; j++) {
+				if(arr[i] < arr[j]) {
+					int temp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = temp;
+				}
 			}
 		}
+		a = arr[0];
+		b = arr[1];
+		c = arr[2];
 		
-		if(b == c) {
-			a = b;
-		}else if(b != c) {
-			a = b+c-1;
+		// 2. 길이 조절
+		if(a == b && b == c) {
+			System.out.print(a+b+c);
+			
+		}else if(b == c) {
+			System.out.print(2*(b + c) - 1);
+			
+		}else if(a == b) {
+			System.out.print(a+b+c);
+			
+		}else {
+			System.out.print(2*(b + c) - 1);
+			
 		}
 		
-		System.out.print(a+b+c);
-		
-		/*
-		 * 1. 최대길이 및 사이드길이 2개 알아내기
-		 *  2-1. 사이드 길이가 같다면 최대길이도 '사이드와 같게' 맞추기
-		 *  2-2. 사이드 길이가 다르다면 '사이드길이의 합-1' 로 만들기
-		 * 3. 세 변의 합 출력
-		 */
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		// 2. 세변의 길이가 같은 경우 (a=b=c) 		 ~> a+b+c
+		// 3. 두변의 길이가 같은 경우
+		//  3-1. 다른 한변의 길이가 긴 경우	 (a>b=c) ~> 2(b+c)-1
+		//  3-2. 다른 한변의 길이가 짧은 경우 (a<b=c)   ~> a+b+c
+		// 4. 세변의 길이가 다른 경우 (a>b>c)	     	 ~> 2(b+c)-1
+		sc.close();
 	}
 }
