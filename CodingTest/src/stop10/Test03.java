@@ -3,7 +3,7 @@ package stop10;
 import java.util.Scanner;
 
 /*
- * 날짜 : 2023/07/13
+ * 날짜 : 2023/07/17
  * 이름 : 한상민
  * 내용 : 3009. 네 번째 점
  */
@@ -19,17 +19,28 @@ public class Test03 {
 				point[i][j] = sc.nextInt();
 			}
 		}
-		/** ~~> 최대로는 구할 수 없음
-		// 각 요소 최대값 구하기
-		for(int j=0 ; j<2 ; j++) {
-			int max = 0;
-			for(int i=0 ; i<3 ; i++) {
-				if(max < point[i][j]) {
-					max = point[i][j];
-				}
-			}
-			System.out.print(max + " ");
-		}
-		*/
+
+		// x, y축 각 안겹치는 값 구하기
+		/* x축 */
+		int x = 0;
+		if(point[0][0] == point[1][0])
+			x = point[2][0];
+		else if(point[1][0] == point[2][0])
+			x = point[0][0];
+		else
+			x = point[1][0];
+		
+		/* y축 */
+		int y = 0;
+		if(point[0][1] == point[1][1])
+			y = point[2][1];
+		else if(point[1][1] == point[2][1])
+			y = point[0][1];
+		else
+			y = point[1][1];
+		
+		System.out.println( x + " " + y );
+		
+		sc.close();
 	}
 }
