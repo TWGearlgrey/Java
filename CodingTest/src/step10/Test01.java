@@ -1,4 +1,4 @@
-package stop10;
+package step10;
 
 import java.util.Scanner;
 
