@@ -13,6 +13,27 @@ class BankAccount {
 		this.balance = balance;
 	}
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	
 	@Override
 	public String toString() {
 		return id + "\t" + name + "\t" + balance;
@@ -26,9 +47,9 @@ public class Test20 {
 		BankAccount[] accounts = new BankAccount[100];
 		
 		while(true) {
-			System.out.println("----------------------------------");
-			System.out.println("1.계좌생성 | 2.계좌목록 | 3.예금 | 4.출금");
-			System.out.println("----------------------------------");
+			System.out.println("+--------------------------------------------+");
+			System.out.println("| 1.계좌생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료 |");
+			System.out.println("+--------------------------------------------+");
 			System.out.print("선택> ");
 			
 			int answer = sc.nextInt();
@@ -72,7 +93,7 @@ public class Test20 {
 						System.out.println(account);
 					}
 				}
-			/*	
+			
 			}else if(answer == 3) {
 				System.out.println("----------");
 				System.out.println("예금");
@@ -82,12 +103,12 @@ public class Test20 {
 				String id = sc.next();
 				
 				System.out.print("예금액: ");
-				String ip = sc.next();
+				int money = sc.nextInt();
 				
 				for(int i=0 ; i<accounts.length ; i++) {	
-					if(accounts[i] == id) {
-						
-					}else if(accounts[i] == null) {
+					if(accounts[i].getId().equals(id)) {
+						accounts[i].setBalance(+money);
+					}else {
 						System.out.println("존재하지 않는 계좌입니다.");
 						break;
 					}
@@ -101,7 +122,7 @@ public class Test20 {
 				System.out.print("계좌번호: ");
 				String id = sc.next();
 			}
-			*/
+			
 		}
 	}
 }
