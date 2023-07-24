@@ -3,26 +3,38 @@ package step12;
 import java.util.Scanner;
 
 /*
- * 날짜 : 2023/07/21
+ * 날짜 : 2023/07/24
  * 이름 : 한상민
  * 내용 : 2231. 분해합
  */
 public class Test02 {
 	public static void main(String[] args) {
+		
+		// 입력
 		Scanner sc = new Scanner(System.in);
-		String n = sc.next();
-		int len = n.length();
+		int num = sc.nextInt();
 		
-		// String + (s1 .. sn) == n
-		int min = 0;
-
-		// 1. 글자수로 필터링해서 탐색 범위를 좁히기
-		// 2. 가장 큰 수부터 비교 시작하기
-		// 3. 
+		// 비교를 위한 tmpNum과 출력을 위한 min 변수 생성 
+		int  tmpNum = num;
+		int  min = 0; 
 		
-		// 216~~~
-		// 198 => 198 + 1 + 9 + 8 = 216
-		// 199 => 199 + 1 + 9 + 9 = 218
-		// 200 => 200 + 2 + 0 + 0 = 202
+		// 생성자 찾기
+		for(int i=tmpNum ; i>=0 ; i--) {
+			
+			String tmpSt = String.valueOf(i);
+			
+			int temp = i;
+			
+			for(int j=0 ; j<tmpSt.length() ; j++) {
+				temp += tmpSt.charAt(j) - 48;
+			}
+			
+			if(temp == num) {
+				min = i;
+			}
+		}
+		sc.close();
+		
+		System.out.println(min);
 	}
 }
