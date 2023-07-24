@@ -9,53 +9,52 @@ import java.util.Scanner;
  */
 public class Test03 {
 	public static void main(String[] args) {
-		
-		/*  경우의 수
-		 * 1. c나 f가 0일 때 
-		 *  a & d가 
-		 */
-		
-		
-		// x,y 선언
-		int x = 0;
-		int y = 0;
-		
-		
-		// 값 6개 입력
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int c = sc.nextInt();
 		
-		int d = sc.nextInt();
-		int e = sc.nextInt();
-		int f = sc.nextInt();
+		// 입력받기
+		double a = sc.nextDouble();
+		double b = sc.nextDouble();
+		double c = sc.nextDouble();
 		
-		// 계산
-		if(a == 0) {
+		double d = sc.nextDouble();
+		double e = sc.nextDouble();
+		double f = sc.nextDouble();
+		
+		
+		// 연립방정식 풀기
+		double x=0, y=0;
+		
+		if(a==0 && e==0) {
+			x = f/d; 
 			y = c/b;
+			
+		}else if(b==0 && d==0) {
+			x = c/a;
+			y = f/e;
+			
+		}else if(a==0) {
+			x = (f - c*e/b)/d;
+			y = c/b;
+			
+		}else if(b==0) { 
+			x = c/a;
+			y = (f - c*d/a)/e;
+			
+		}else if(d==0) { 
+			x = (c - b*f/e)/a;
+			y = f/e;
+			
+		}else if(e==0) { 
+			x = f/d;
+			y = (c - a*f/d)/b;
+			
+		}else { // ~~ a, b, d, e 모두 0이 아닐 때
+			x = (c*e - b*f) / (a*e - b*d);
+			y = (c*d - a*f) / (b*d - a*e);
 		}
 		
+		sc.close();
 		
-		x = (c*e - b*f) / (a*e - b*d);
-		y = (c*d - a*f) / (b*d - a*e);
-		
-		System.out.println(x + " " + y);
-		
-		/*
-		 * ax + by = c
-		 * dx + ey = f
-		 * 
-		 * adx + bdy = cd
-		 * adx + aey = af
-		 * 
-		 * aex + bey = ce
-		 * bdx + bey = bf
-		 * 
-		 * x = (ce - bf) / (ae - bd);
-		 * y = (cd - af) / (bd - ae);
-		 * 
-		 */
-	
+		System.out.println((int) x + " " + (int) y);
 	}
 }
