@@ -7,38 +7,39 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ThreadSender extends Thread {
-	
+
 	private Socket socket;
-	
+
 	public ThreadSender(Socket socket) {
 		this.socket = socket;
 	}
-	
+
 	@Override
 	public void run() {
-		
+
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			PrintWriter writer = new PrintWriter(socket.getOutputStream());
-			
+
 			while(true) {
-				
+
 				String msg = br.readLine();
-			
+
 				if(msg.equals("bye")) {
 					break;
 				}
-				
-				writer.println("송신 > " + msg);
+
+				writer.println(msg);
 				writer.flush();
 			}
-			
-		} catch (Exception e) {
+
+		}catch (Exception e) {
 			e.printStackTrace();
-		} finally {
 			
+		}finally {
 			try {
 				socket.close();
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

@@ -3,7 +3,7 @@ package sub3;
 /**
  * 날짜 : 2023/07/03
  * 이름 : 한상민
- * 내용 : Java
+ * 내용 : Java Thread 활용 실습하기
  */
 public class ThreadAddTest {
 	public static void main(String[] args) throws InterruptedException {

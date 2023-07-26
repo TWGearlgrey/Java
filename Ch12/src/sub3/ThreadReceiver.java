@@ -6,40 +6,41 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class ThreadReceiver extends Thread {
-	
+
 	private Socket socket;
-	
+
 	public ThreadReceiver(Socket socket) {
 		this.socket = socket;
 	}
-	
+
 	@Override
 	public void run() {
 
 		try {
-			
+
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			
+
 			while(true) {
-				
+
 				String msg = br.readLine();
-				
+
 				if(msg == null) {
 					break;
 				}
-				
-				System.out.println("수신 > " + msg);
+
+				System.out.println(msg);
 			}
 			
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
-		} finally {
+			
+		}finally {
 			try {
 				socket.close();
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-	
 	}
 }
