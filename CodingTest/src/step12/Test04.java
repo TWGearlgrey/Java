@@ -17,50 +17,71 @@ public class Test04 {
 		int n = sc.nextInt(); 
 		
 		// 체스판 생성
-		char[][] board = new char[m][n];
-		
+		String[] board = new String[m];
+
 		for(int i=0 ; i<m ; i++) {
-			for(int j=0 ; j<n ; j++) {
-				String bw = sc.next();
-				board[i][j] = bw.charAt(j);
-			}
+			board[i] = sc.next();
 		}
 
 		// 비교할 보드 생성
-		char[] sB = new char[8];
-		char[] sW = new char[8];
-		boolean switcH = true;
+		char[] sB = {'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'}; // 길이가 8을 넘어가는경우 오류 발생.
+		char[] sW = {'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'}; // 위와 같음.
 		
-		for(int i=0 ; i<8 ; i++) {
-			if(switcH == true) {
-				sB[i] = 'B';
-				sW[i] = 'W';
-				switcH = false;
-				
-			}else {
-				sB[i] = 'W';
-				sW[i] = 'B';
-				switcH = true;
-			}
-		}
-		
+		// 탐색
 		int stM = 0;
 		int stN = 0;
 		
-		for(int i=stM ; i<m-stM ; i++) {
-			for(int j=stN ; j<n-stN ; j++) {
+		int[] cntStB = {0, 0};
+		int[] cntStW = {0, 0};
+		
+		while(true) {
+			
+			for(int i=stM ; i<stM+8 ; i++) {
+				for(int j=stN ; j<stN+8 ; j++) {
+					
+					if(i%2 == 0) {
+						if(sB[j] == board[i].charAt(j)) {
+							cntStB[0]++;
+						}else {
+							cntStW[0]++;
+						}
+					}else {
+						if(sW[j] == board[i].charAt(j)) {
+							cntStB[0]++;
+						}else {
+							cntStW[0]++;
+						}
+					}
+				}
+			}
+
+			if(cntStB[0] > cntStB[1]) {
+				cntStB[1] = cntStB[0];
+				cntStB[0] = 0;
+			}
+			
+			if(cntStW[0] > cntStW[1]) {
+				cntStW[1] = cntStW[0];
+				cntStW[0] = 0;
+			}
+			
+			// 반복문 증감식 및 break설정
+			if(stN < n-8) { // n=10, 0 1 {2} 3 4 5 6 7 8 9
+				stN++;
 				
+			}else if(stM < m-8) { // m=13, 0 1 2 3 4 {5} 6 7 8 9 10 11 12
+				stN = 0;
+				stM++;
 				
+			}else {
+				break;
 			}
 		}
-			
-		//좌측상단기준 시작 기준점설정 (0부터 m-8, n-8이 시작 마지노선)
-		//시작 기준점이 B인지 W인지 확인 ~> 별로 안중요한거같음
-		//BWcnt, WBcnt해서 더 큰 쪽 찾아 max{세로, 가로, B0||W1} 배열 에 대입해두기
 		
-		// 가장 적게 칠하는 방법 찾기
-
-		
-		
+		if(cntStB[1] > cntStW[1]) {
+			System.out.println(64-cntStB[1]);
+		}else {
+			System.out.println(64-cntStW[1]);
+		}
 	}
 }
