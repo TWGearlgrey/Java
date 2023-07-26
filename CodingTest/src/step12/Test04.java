@@ -3,9 +3,9 @@ package step12;
 import java.util.Scanner;
 
 /*
- * 날짜 : 2023/07/24
+ * 날짜 : 2023/07/26
  * 이름 : 한상민
- * 내용 : 1018. 제목
+ * 내용 : 1018. 체스판 다시 칠하기
  */
 public class Test04 {
 	public static void main(String[] args) {
@@ -40,13 +40,14 @@ public class Test04 {
 				for(int j=stN ; j<stN+8 ; j++) {
 					
 					if(i%2 == 0) {
-						if(sB[j] == board[i].charAt(j)) {
+						if(sB[j - stN] == board[i].charAt(j)) {
 							cntStB[0]++;
 						}else {
 							cntStW[0]++;
 						}
+						
 					}else {
-						if(sW[j] == board[i].charAt(j)) {
+						if(sW[j - stN] == board[i].charAt(j)) {
 							cntStB[0]++;
 						}else {
 							cntStW[0]++;
@@ -54,7 +55,8 @@ public class Test04 {
 					}
 				}
 			}
-
+			
+			// 더 효율적인 방법 있을 시 기록
 			if(cntStB[0] > cntStB[1]) {
 				cntStB[1] = cntStB[0];
 				cntStB[0] = 0;
@@ -64,6 +66,10 @@ public class Test04 {
 				cntStW[1] = cntStW[0];
 				cntStW[0] = 0;
 			}
+			
+			// 초기화
+			cntStB[0] = 0;
+			cntStW[0] = 0;
 			
 			// 반복문 증감식 및 break설정
 			if(stN < n-8) { // n=10, 0 1 {2} 3 4 5 6 7 8 9
@@ -83,5 +89,7 @@ public class Test04 {
 		}else {
 			System.out.println(64-cntStW[1]);
 		}
+		
+		sc.close();
 	}
 }
