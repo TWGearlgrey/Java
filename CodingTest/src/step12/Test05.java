@@ -14,22 +14,44 @@ public class Test05 {
 		int n = sc.nextInt();
 		
 		String series = "666";
-		int fNum = 0; // 
-		int lNum = 0; // len-
+		String result = null; 
+		int fNum = 0; 
+		int lNum = 0;
 		
-		// lastNo.이 fNum >= 7 || fNum <= 5  ~> fNum++;, lstNo.=6일때 초기화
-		// lstNo.=6이 되는 순간, cnt를 fNum에, 0~9까지 lNum(lNum++;)
-		// 
+		boolean switcH = true;
+		
+		for(int i=0 ; i<n ; i++) {
+			
+			// 앞자리가 1씩 증가하는 패턴
+			// 앞자리는 cnt고정, 뒷자리는 0부터 9까지 증가하는 패턴
+			// 앞자리가 66이 됐을 때 66600, 166600과 같은 경우
+		}
+		
+		System.out.println(result);
 		
 	}
 	
+	// String -> int 변환
 	public static int nt(String num) {
 		int result = Integer.parseInt(num);
 		return result;
 	}
 	
+	// int -> String 변환
 	public static String st(int num) {
 		String result = String.valueOf(num);
+		return result;
+	}
+	
+	// 숫자 끝자리 추출하기
+	public static int last(int num) {
+		int result = st(num).charAt((st(num).length()));
+		return result;
+	}
+	
+	// 숫자 첫자리 추출하기
+	public static int first(int num) {
+		int result = st(num).charAt(0);
 		return result;
 	}
 }
