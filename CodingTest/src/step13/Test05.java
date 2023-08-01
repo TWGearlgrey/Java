@@ -17,12 +17,17 @@ public class Test05 {
 		int n = sc.nextInt();
 		
 		int[] idx = new int[n];
-		int[] cnt = new int[10000];
+		List<Integer> cnt = new ArrayList<>(); // List로 바꿔서 메모리 줄이기.
 		int[] rst = new int[n];
 		
 		for(int i=0 ; i<n ; i++) {
-			idx[i] = sc.nextInt();
+			idx[i] = sc.nextInt(); 
+			cnt.set(idx[i], cnt.get(idx[i])+1); 
 		}
+		
+		
+		
+		
 		
 		
 		
