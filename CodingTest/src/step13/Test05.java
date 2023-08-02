@@ -1,7 +1,5 @@
 package step13;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -19,25 +17,34 @@ public class Test05 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		
+		String result = "";
+		
 		// 배열, 리스트 생성
 		int[] idx = new int[n];
-		List<Integer> cnt = new ArrayList<>(); // List로 바꿔서 메모리 줄이기.
+		int[] cnt = new int[10001];
 		int[] rst = new int[n];
 		
-		// 입력값 idx, cnt 담기
+		// 1. 입력값 idx, cnt 담기
 		for(int i=0 ; i<n ; i++) {
-			idx[i] = sc.nextInt(); 
-			cnt.set(idx[i], cnt.get(idx[i])+1); 
+			idx[i] = sc.nextInt();
+			cnt[idx[i]]++;
 		}
 		
-		// cnt[i+1] += cnt[i]; 처리 해주기.
+		// 2. cnt[i+1] += cnt[i]; 처리 해주기.
+		for(int i=1 ; i<10001 ; i++) {
+			cnt[i] += cnt[i-1];
+		}
 		
+		// 3. cnt를 rst 처리하여 출력
+		for(int i=n-1 ; i>=0 ; i--) {
+			cnt[idx[i]]--;
+			rst[cnt[idx[i]]] = idx[i];
+		}
 		
+		for(int i=0 ; i<n ; i++) {
+			result += ""+rst[i]+"\n";
+		}
 		
-		
-		
-		
-		
-		
+		System.out.println(result);
 	}
 }
