@@ -1,6 +1,10 @@
 package step13;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 /*
  * 날짜 : 2023/00/00
@@ -12,39 +16,62 @@ import java.util.Scanner;
  * 참고
  *  - https://st-lab.tistory.com/104?category=856997
  */
+
+/* 
+ * 시간초과로 실패한 코드
+ * int N = Integer.parseInt(br.readLine());
+ * int[] arrs = new int[N];
+ * 
+ * for(int i=0 ; i<N ; i++) {
+ * 	arrs[i] = Integer.parseInt(br.readLine());
+ * }
+ * 
+ * br.close();
+ * bw.flush();
+ * bw.close();
+ * 
+ * Arrays.sort(arrs);
+ * 
+ * String result = "";
+ * 
+ * for(int i=0 ; i<N ; i++) {
+ * 	result += "" + arrs[i] + "\n";
+ * }
+ * 
+ * System.out.println(result);
+ */
+
 public class Test05 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		String result = "";
+		int n = Integer.parseInt(br.readLine());
 		
-		// 배열, 리스트 생성
-		int[] idx = new int[n];
-		int[] cnt = new int[10001];
-		int[] rst = new int[n];
+		int[] arr = new int [n];
+		int[] cnt = new int [10001];
+		int[] rst = new int [n];
 		
-		// 1. 입력값 idx, cnt 담기
-		for(int i=0 ; i<n ; i++) {
-			idx[i] = sc.nextInt();
-			cnt[idx[i]]++;
+		// 1번 과정
+		for(int i=0; i<n ; i++) {
+			arr[i] = Integer.parseInt(br.readLine());
+			cnt[arr[i]]++;
 		}
 		
-		// 2. cnt[i+1] += cnt[i]; 처리 해주기.
-		for(int i=1 ; i<10001 ; i++) {
+		// 2번 과정
+		for(int i=1 ; i<n ; i++) {
 			cnt[i] += cnt[i-1];
 		}
 		
-		// 3. cnt를 rst 처리하여 출력
-		for(int i=n-1 ; i>=0 ; i--) {
-			cnt[idx[i]]--;
-			rst[cnt[idx[i]]] = idx[i];
+		// 3번 과정
+		for(int i=arr.length-1 ; i>=0 ; i--) {
+			int v = arr[i];
+			cnt[v]--;
+			rst[cnt[v]] = v;
 		}
 		
-		for(int i=0 ; i<n ; i++) {
-			result += ""+rst[i]+"\n";
-		}
 		
-		System.out.println(result);
+		
+
 	}
 }
